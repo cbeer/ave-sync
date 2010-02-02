@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TEI Transcript/SMIL Alignment Tool</title>
+<script type="text/javascript" src="lib/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="lib/app.js"></script>
+<script type="text/javascript" src="lib/AC_Quicktime.js"></script>
+<script type="text/javascript" src="lib/jquery.timers.js"></script>
+<script type="text/javascript" src="lib/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="lib/media_loader.js"></script>
+<script type="text/javascript" src="lib/sync.js"></script>
+
+<link href="lib/styles/base.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="output">
+		<a class="close" onclick="$(this).parent().hide();">Close [x]</a>
+		<textarea class="xml"></textarea>
+	</div>
+	<div id="header">
+	<p class="directions">
+	These are directions
+	</p>
+		<p>
+		<label for="video_url">URL to Video</label>
+		<input type="text" name="video_url" id="video_url" />
+		<input type="button" value="Load Video" onclick="load_media($('#video_url').val());" />
+		</p>
+	<p>
+		<label for="source_doc">Transcript Source</label>
+		<input type="text" name="source_doc" id="source_doc" />
+		<input type="button" value="Load Transcript" onclick="load_transcript($('#source_doc').val());"/>
+		</p>
+		<input type="button" value="Show Source" onclick="showXML();" />
+	</div>
+	<div id="main">
+		<div class="pane">	
+		<div class="media video">
+			<div id="video">
+				<img src="" class="placeholder" />
+				<div class="playbutton"></div><div class="pausebutton"></div>
+			</div>
+		</div>
+		<div class="controls">
+<div><label class="first">Controls</label></div>
+		<div>
+			<input type="button" value="||"  onclick="$('.media').media('stop');" accesskey="s"/>
+			<input type="button" value="&gt;"  onclick="$('.media').media('play');" accesskey="d"/>     
+    	</div>
+<div><label>Jump</label></div>
+<div>
+			<input accesskey="y" type="button" value="-5s"  onclick="jump(-5);"/>
+			<input accesskey="u" type="button" value="+5"  onclick="jump(5);"/>
+</div>
+<div>
+		<input accesskey="h" type="button" value="-15s"  onclick="jump(-15);"/>
+		<input accesskey="j" type="button" value="+15"  onclick="jump(15);"/>
+</div>
+<div>
+		<input accesskey="n" type="button" value="-30s"  onclick="jump(-30);"/>
+		<input accesskey="m" type="button" value="+30"  onclick="jump(30);"/>
+</div>
+
+<div><label>Sync</label></div>
+<input type="button" onclick="markIn()" value="Mark In" accesskey="i"/>
+<input type="hidden" />
+<input type="button" onclick="markOut()" value="Mark Out" accesskey="o"/>
+<input type="button" onclick="preview()" value="Preview" accesskey="p"/>
+
+<div style="margin-top: 2px; margin-right: 5px;">
+      <input accesskey="k" type="button" value="Scroll" onclick="tr = $('.current').nextAll('.active').filter(':first'); $('.text').scrollTo(tr); $('.text .current').removeClass('current'); tr.addClass('current');"/><input type="button" onclick="preview(-1)" value="Last" accesskey="l"/></div>
+</div>
+		</div>
+		<div class="media text">
+		
+		</div>
+	</div>
+</body>
+</html>
