@@ -1,0 +1,32 @@
+#video_tools {
+	display:none;
+}
+
+#annotation {
+	height: 400px;
+}
+
+#new_annotation {
+	display:  none;
+	background-color: #CCC;
+	border: 1px solid #999;
+	padding: 15px;
+}
+
+#new_annotation textarea {
+	display: block;
+	height: 200px;
+	width: 100%;
+}
+
+label {
+	font-weight: bold;
+}
+
+.time {
+	
+	font-weight: bold;
+}
+.time:after {
+	content:  ": ";
+}
