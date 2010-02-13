@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TEI Transcript/SMIL Alignment Tool</title>
+<title>Media Annotation Tool</title>
 <script type="text/javascript" src="lib/jquery-1.4.1.min.js"></script>
 <script type="text/javascript" src="lib/annotate.js"></script>
 <script type="text/javascript" src="lib/AC_Quicktime.js"></script>
@@ -11,7 +11,10 @@
 <script type="text/javascript" src="lib/media_loader.js"></script>
 <script type="text/javascript" src="lib/sync.js"></script>
 <script type="text/javascript" src="lib/clip.js"></script>
+<script type="text/javascript" src="lib/jquery-ui.js"></script>
+<script type="text/javascript" src="lib/scrubbar.js"></script>
 
+<link href="lib/styles/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="lib/styles/base.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="lib/styles/annotate.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
@@ -36,15 +39,22 @@
 			<div id="video">
 				<img src="" class="placeholder" />
 				<div class="playbutton"></div><div class="pausebutton"></div>
+				<div class="scrubbar" />
 			</div>
 			<div id="annotation">
 			<a href="" onclick="markIn(); $('#new_annotation').show(); return false;">Start an annotation</a>
 			<div id="new_annotation">
-			
-			<input type="button" onclick="markIn()" value="Set Marker" accesskey="i"/>
-<!--			<input type="button" onclick="markOut()" value="Mark Out" accesskey="o"/>
-			<input type="button" onclick="reset()" value="Reset" accesskey="p"/> -->
-			<input class="clip_in" />
+			<p>
+			<input type="button" onclick="markIn()" value="Mark In" accesskey="i"/>
+			    <input class="mark_clip_in" /> 
+			    </p>
+			    <p>
+			<input type="button" onclick="markOut()" value="Mark Out" accesskey="o"/>
+			    <input class="mark_clip_out" /> 
+			    </p>
+			    <p>
+			    <input type="button" onclick="reset()" value="Reset clip" />
+			    </p>
 				<form id="annotation_form" >
 				<input type="hidden" name="metadata" />
 				<label for="body">Enter your annotation here:</label>
@@ -56,10 +66,12 @@
 			</div>
 		</div>
 			</div>
+			</div>
+			<div class="pane">
 			<h1>Annotations</h1>
 		<div class="annotations">
 			
 		</div>
-	</div>
+		</div>
 </body>
 </html>

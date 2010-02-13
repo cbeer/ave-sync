@@ -1,3 +1,4 @@
+
 .media.video, #video {
 	width:  320px;
 }
@@ -7,6 +8,7 @@
 }
 
 #new_annotation {
+	z-index: 1;
 	display:  none;
 	background-color: #CCC;
 	border: 1px solid #999;
