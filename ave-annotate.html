@@ -13,6 +13,7 @@
 <script type="text/javascript" src="lib/clip.js"></script>
 <script type="text/javascript" src="lib/jquery-ui.js"></script>
 <script type="text/javascript" src="lib/scrubbar.js"></script>
+<script type="text/javascript" src="lib/slider-highlight.js"></script>
 
 <link href="lib/styles/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="lib/styles/base.css" media="screen" rel="stylesheet" type="text/css" />
@@ -45,7 +46,7 @@
 				</div>
 			</div>
 			<div id="annotation">
-			<a href="" onclick="markIn(); $('#new_annotation').show(); return false;">Start an annotation</a>
+			<a href="" onclick="markIn(); $('#new_annotation').show(); $('#video').addClass('annotation-mode'); return false;">Start an annotation</a>
 			<div id="new_annotation">
 			<p>
 			<input type="button" onclick="markIn()" value="Mark In" accesskey="i"/>
@@ -63,7 +64,7 @@
 				<label for="body">Enter your annotation here:</label>
 				<textarea name="body"></textarea>
 				<input accesskey="s" type="submit" value="Save annotation"/>
-				<input type="reset" value="Cancel" onclick="$('#new_annotation').hide();"/>
+				<input type="reset" value="Cancel" onclick="$('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); "/>
 				</form>
 			</div>
 			</div>

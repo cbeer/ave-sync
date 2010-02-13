@@ -1,6 +1,7 @@
 
 .media.video, #video {
 	width:  320px;
+	margin-bottom: 5em;
 }
 
 #video_tools {
@@ -70,6 +71,7 @@ label {
 	position: relative;
 	padding-left: 35px;
 	padding-top:  5px;
+	margin-bottom: 2em;
 }
 
 .scrubbar {
@@ -85,3 +87,5 @@ label {
 .scrubbar .clip_in.ui-state-hover, .scrubbar .clip_out.ui-state-hover {
 	background-color: #F66;
 }
+.highlight { position: absolute; height: 100%; background-color: rgba(0,0,255, 0.5);}
+.range { position: absolute; height: 100%; background-color: rgba(255,0,0, 0.5);}
