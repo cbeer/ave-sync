@@ -44,6 +44,7 @@
 				<div class="pausebutton"></div>
 				<div class="scrubbar" />
 				</div>
+				<div class="timestamp">00:00:00</div>
 			</div>
 			<div id="annotation">
 			<a href="" onclick="markIn(); $('#new_annotation').show(); $('#video').addClass('annotation-mode'); return false;">Start an annotation</a>
@@ -57,14 +58,14 @@
 			    <input class="mark_clip_out" /> 
 			    </p>
 			    <p>
-			    <input type="button" onclick="reset()" value="Reset clip" />
+			    <input type="button" onclick="markReset()" value="Reset clip" />
 			    </p>
 				<form id="annotation_form" >
 				<input type="hidden" name="metadata" />
 				<label for="body">Enter your annotation here:</label>
 				<textarea name="body"></textarea>
 				<input accesskey="s" type="submit" value="Save annotation"/>
-				<input type="reset" value="Cancel" onclick="$('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); "/>
+				<input type="reset" value="Cancel" onclick=" markReset(); $('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); "/>
 				</form>
 			</div>
 			</div>

@@ -83,9 +83,20 @@ label {
 	margin-left: -1.5px;
 	height:  2.5em;
 	background-color:  #A66;
+	display: none;
 }
 .scrubbar .clip_in.ui-state-hover, .scrubbar .clip_out.ui-state-hover {
 	background-color: #F66;
 }
 .highlight { position: absolute; height: 100%; background-color: rgba(0,0,255, 0.5);}
-.range { position: absolute; height: 100%; background-color: rgba(255,0,0, 0.5);}
+.range { display: none ;position: absolute; height: 100%; background-color: rgba(255,0,0, 0.5);}
+
+.annotation-mode .scrubbar .clip_in, .annotation-mode .scrubbar .clip_out, .annotation-mode .range {
+	display: block;
+}
+
+.timestamp {
+	float:  right;
+	font-size: 80%;
+	color:  #666;
+}
