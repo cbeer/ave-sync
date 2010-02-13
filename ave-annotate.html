@@ -20,63 +20,59 @@
 <link href="lib/styles/annotate.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div id="output">
-		<a class="close" onclick="$(this).parent().hide();">Close [x]</a>
-		<textarea class="xml"></textarea>
-	</div>
 	<div id="header">
-	<p class="directions">
-	These are directions
-	</p>
+		<p class="directions">
+		These are directions
+		</p>
 		<p>
-		<label for="video_url">URL to Video</label>
-		<input type="text" name="video_url" id="video_url" />
-		<input type="button" value="Load Video" onclick="load_media($('#video_url').val());" />
+			<label for="video_url">URL to Video</label>
+			<input type="text" name="video_url" id="video_url" />
+			<input type="button" value="Load Video" onclick="load_media($('#video_url').val());" />
 		</p>
 	</div>
+	
 	<div id="main">
 		<div class="pane">	
-		<div class="media video">
-			<div id="video">
-				<img src="" class="placeholder" />
-				<div class="playbar">
-				<div class="playbutton"></div>
-				<div class="pausebutton"></div>
-				<div class="scrubbar"></div>
-				<div class="timestamp">00:00:00</div>
+			<div class="media video">
+				<div id="video">
+					<img src="" class="placeholder" />
+					<div class="playbar">
+						<div class="playbutton"></div>
+						<div class="pausebutton"></div>
+						<div class="scrubbar"></div>
+						<div class="timestamp">00:00:00</div>
+					</div>
+				</div>
+				<div id="annotation">
+					<h2><a href="" onclick="markIn(); $('#new_annotation').show(); $('#video').addClass('annotation-mode'); return false;">Start an annotation</a></h2>
+					<div id="new_annotation">
+						<p>
+							<input type="button" onclick="markIn()" value="Mark In" accesskey="i"/>
+					    	<input type="text" class="mark_clip_in" /> 
+					    </p>
+					    <p>
+							<input type="button" onclick="markOut()" value="Mark Out" accesskey="o"/>
+					    	<input type="text" class="mark_clip_out" /> 
+					    </p>
+					    <p>
+					    	<input type="button" onclick="markReset()" value="Reset clip" />
+					    </p>
+						<form id="annotation_form" >
+							<input type="hidden" name="metadata" />
+							<label for="body">Enter your annotation here:</label>
+							<textarea name="body"></textarea>
+							<input accesskey="s" type="submit" value="Save annotation"/>
+							<input type="reset" value="Cancel" onclick=" markReset(); $('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); "/>
+						</form>
+					</div>
 				</div>
 			</div>
-			<div id="annotation">
-			<a href="" onclick="markIn(); $('#new_annotation').show(); $('#video').addClass('annotation-mode'); return false;">Start an annotation</a>
-			<div id="new_annotation">
-			<p>
-			<input type="button" onclick="markIn()" value="Mark In" accesskey="i"/>
-			    <input class="mark_clip_in" /> 
-			    </p>
-			    <p>
-			<input type="button" onclick="markOut()" value="Mark Out" accesskey="o"/>
-			    <input class="mark_clip_out" /> 
-			    </p>
-			    <p>
-			    <input type="button" onclick="markReset()" value="Reset clip" />
-			    </p>
-				<form id="annotation_form" >
-				<input type="hidden" name="metadata" />
-				<label for="body">Enter your annotation here:</label>
-				<textarea name="body"></textarea>
-				<input accesskey="s" type="submit" value="Save annotation"/>
-				<input type="reset" value="Cancel" onclick=" markReset(); $('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); "/>
-				</form>
-			</div>
-			</div>
 		</div>
-			</div>
-			</div>
-			<div class="pane">
+		<div class="pane">
 			<h1>Annotations</h1>
 		<div class="annotations">
-			
+				
 		</div>
-		</div>
+	</div>
 </body>
 </html>
