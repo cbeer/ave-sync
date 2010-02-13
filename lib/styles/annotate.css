@@ -11,6 +11,11 @@
 	background-color: #CCC;
 	border: 1px solid #999;
 	padding: 15px;
+	
+	position:absolute;
+	right: -250px;
+	top: 0;
+	-moz-box-shadow: 5px 5px 20px black;
 }
 
 #new_annotation textarea {
