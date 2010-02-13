@@ -40,3 +40,48 @@ label {
 .time:after {
 	content:  ": ";
 }
+
+.playbutton, .pausebutton {
+	display:  block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 0;
+}
+
+.playbutton {
+	background-color: green;
+}
+
+.pausebutton {
+	background-color: red;
+	display:  none;
+}
+
+.qt-play .playbutton {
+	display:  none;
+}
+
+.qt-play .pausebutton {
+	display: block;
+}
+
+.playbar {
+	position: relative;
+	padding-left: 35px;
+	padding-top:  5px;
+}
+
+.scrubbar {
+	margin-top: 2px;
+}
+
+.scrubbar .clip_in, .scrubbar .clip_out {
+	width:  3px;
+	margin-left: -1.5px;
+	height:  2.5em;
+	background-color:  #A66;
+}
+.scrubbar .clip_in.ui-state-hover, .scrubbar .clip_out.ui-state-hover {
+	background-color: #F66;
+}
