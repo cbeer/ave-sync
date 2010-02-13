@@ -1,11 +1,19 @@
-
+.media.video {
+	padding: 1.5em 5px;
+	background-color: #eee;
+	border:  1px solid #ccc;
+}
 .media.video, #video {
 	width:  320px;
-	margin-bottom: 5em;
+	margin-bottom: 2em;
 }
 
 #video_tools {
 	display:none;
+}
+
+#annotation h2 {
+	text-align: center;
 }
 
 #new_annotation {
@@ -26,8 +34,21 @@
 
 #new_annotation textarea {
 	display: block;
-	height: 200px;
+	height: 170px;
 	width: 100%;
+}
+
+#new_annotation input[type="button"] {
+	width:  70px;
+}
+
+#new_annotation input[type="text"] {
+	width:  65px;
+}
+
+#new_annotation p:first-child {
+	float: left;
+	margin-right: 10px;
 }
 
 label {
@@ -85,8 +106,12 @@ label {
 	background-color:  #A66;
 	display: none;
 }
-.scrubbar .clip_in.ui-state-hover, .scrubbar .clip_out.ui-state-hover {
-	background-color: #F66;
+.scrubbar .clip_in.ui-state-hover, .scrubbar .clip_out.ui-state-hover,
+.scrubbar .clip_in.ui-state-focus, .scrubbar .clip_out.ui-state-focus {
+	background-color: #F33;
+	width: 6px;
+	margin-left:  -3px;
+	height:  3.5em;
 }
 .highlight { position: absolute; height: 100%; background-color: rgba(0,0,255, 0.5);}
 .range { display: none ;position: absolute; height: 100%; background-color: rgba(255,0,0, 0.5);}
