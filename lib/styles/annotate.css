@@ -1,9 +1,9 @@
-#video_tools {
-	display:none;
+.media.video, #video {
+	width:  320px;
 }
 
-#annotation {
-	height: 400px;
+#video_tools {
+	display:none;
 }
 
 #new_annotation {
@@ -13,9 +13,12 @@
 	padding: 15px;
 	
 	position:absolute;
-	right: -250px;
+	left: 100%;
+	margin-left: 30px;
 	top: 0;
 	-moz-box-shadow: 5px 5px 20px black;
+	
+	width: 320px;
 }
 
 #new_annotation textarea {
