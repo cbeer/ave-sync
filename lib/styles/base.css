@@ -3,6 +3,11 @@ h1 {
 	margin: 0.1em;
 }
 
+.clear {
+	height:  0;
+	clear: both;
+}
+
 .pane { position: relative; width: 400px; float: left;}
 .text { height: 600px; overflow: auto; border: 1px solid #999; padding: 5px;}
 .text tr td { vertical-align: top; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #CCC; }

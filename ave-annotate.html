@@ -24,11 +24,14 @@
 		<p class="directions">
 		These are directions
 		</p>
-		<p>
-			<label for="video_url">URL to Video</label>
-			<input type="text" name="video_url" id="video_url" />
-			<input type="button" value="Load Video" onclick="load_media($('#video_url').val());" />
-		</p>
+		<form  onsubmit="load_media($('#video_url').val()); return false;">
+			<p>
+				<label for="video_url">Enter the URL to a video: </label><br />
+				<input type="text" name="video_url" id="video_url" />
+				<input type="submit" value="Load Video" />
+			</p>
+		</form>
+		<br style="clear" />
 	</div>
 	
 	<div id="main">

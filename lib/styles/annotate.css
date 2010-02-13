@@ -1,3 +1,12 @@
+#header {
+	padding-bottom: 0;
+}
+
+#video_url {
+	width:  300px;
+	padding:  3px;
+	margin-top: 0.3em;
+}
 .media.video {
 	padding: 1.5em 5px;
 	background-color: #eee;
@@ -73,23 +82,32 @@ label {
 	content:  ": ";
 }
 
+.ui-slider .ui-slider-handle, .playbutton, .pausebutton {
+	cursor:  pointer;	
+	
+}
+
 .playbutton, .pausebutton {
 	display:  block;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	position: absolute;
 	left: 0;
 }
 
 .playbutton {
 	background-color: green;
+	border:  1px solid green;
 }
 
 .pausebutton {
 	background-color: red;
+	border:  1px solid red;
 	display:  none;
 }
-
+.playbutton:hover, .pausebutton:hover {
+	opacity: 0.8;
+}
 .qt-play .playbutton {
 	display:  none;
 }
