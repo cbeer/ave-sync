@@ -61,16 +61,15 @@
 							<input type="hidden" name="metadata" />
 							<label for="body">Enter your annotation here:</label>
 							<textarea name="body"></textarea>
-							<input accesskey="s" type="submit" value="Save annotation"/>
-							<input type="reset" value="Cancel" onclick=" markReset(); $('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); "/>
+							<input accesskey="s" type="submit" value="Save annotation"/> or <a href=""  onclick="$(this).closest('form').get(0).reset(); markReset(); $('#new_annotation').hide(); $('#video').removeClass('annotation-mode'); return false;">cancel</a>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="pane">
-			<h1>Annotations</h1>
 		<div class="annotations">
+			<h1>Annotations</h1>
 				
 		</div>
 	</div>
